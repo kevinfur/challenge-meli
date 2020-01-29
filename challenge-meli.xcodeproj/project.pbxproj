@@ -11,12 +11,15 @@
 		695E87E63DC290A622039DE2 /* Pods_challenge_meliTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A75AD5B7AC272C94282F0A8 /* Pods_challenge_meliTests.framework */; };
 		C372EF3223E23A8900101A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF3123E23A8900101A56 /* AppDelegate.swift */; };
 		C372EF3423E23A8900101A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF3323E23A8900101A56 /* SceneDelegate.swift */; };
-		C372EF3623E23A8900101A56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF3523E23A8900101A56 /* ViewController.swift */; };
 		C372EF3923E23A8900101A56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C372EF3723E23A8900101A56 /* Main.storyboard */; };
 		C372EF3B23E23A8A00101A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C372EF3A23E23A8A00101A56 /* Assets.xcassets */; };
 		C372EF3E23E23A8A00101A56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C372EF3C23E23A8A00101A56 /* LaunchScreen.storyboard */; };
 		C372EF4923E23A8A00101A56 /* challenge_meliTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF4823E23A8A00101A56 /* challenge_meliTests.swift */; };
 		C372EF5423E23A8A00101A56 /* challenge_meliUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF5323E23A8A00101A56 /* challenge_meliUITests.swift */; };
+		C372EF6623E243D100101A56 /* MeLiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6323E243D000101A56 /* MeLiService.swift */; };
+		C372EF6723E243D100101A56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6523E243D000101A56 /* HomeViewController.swift */; };
+		C372EF6A23E246CE00101A56 /* SearchItemsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6923E246CE00101A56 /* SearchItemsResponse.swift */; };
+		C372EF6C23E249CF00101A56 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6B23E249CF00101A56 /* Colors.swift */; };
 		DD85E18BB1BEB612A1E1A37E /* Pods_challenge_meliUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770611F905284346FD6AAD9A /* Pods_challenge_meliUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +52,6 @@
 		C372EF2E23E23A8900101A56 /* challenge-meli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "challenge-meli.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C372EF3123E23A8900101A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C372EF3323E23A8900101A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C372EF3523E23A8900101A56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C372EF3823E23A8900101A56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C372EF3A23E23A8A00101A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C372EF3D23E23A8A00101A56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,10 @@
 		C372EF4F23E23A8A00101A56 /* challenge-meliUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "challenge-meliUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C372EF5323E23A8A00101A56 /* challenge_meliUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenge_meliUITests.swift; sourceTree = "<group>"; };
 		C372EF5523E23A8A00101A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C372EF6323E243D000101A56 /* MeLiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeLiService.swift; sourceTree = "<group>"; };
+		C372EF6523E243D000101A56 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C372EF6923E246CE00101A56 /* SearchItemsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsResponse.swift; sourceTree = "<group>"; };
+		C372EF6B23E249CF00101A56 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D05CBE3766A65DD6E7F01BEC /* Pods-challenge-meliUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challenge-meliUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-challenge-meliUITests/Pods-challenge-meliUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,9 +145,11 @@
 		C372EF3023E23A8900101A56 /* challenge-meli */ = {
 			isa = PBXGroup;
 			children = (
+				C372EF6223E243D000101A56 /* Services */,
+				C372EF6423E243D000101A56 /* Controllers */,
+				C372EF6823E246C200101A56 /* Models */,
 				C372EF3123E23A8900101A56 /* AppDelegate.swift */,
 				C372EF3323E23A8900101A56 /* SceneDelegate.swift */,
-				C372EF3523E23A8900101A56 /* ViewController.swift */,
 				C372EF3723E23A8900101A56 /* Main.storyboard */,
 				C372EF3A23E23A8A00101A56 /* Assets.xcassets */,
 				C372EF3C23E23A8A00101A56 /* LaunchScreen.storyboard */,
@@ -166,6 +174,31 @@
 				C372EF5523E23A8A00101A56 /* Info.plist */,
 			);
 			path = "challenge-meliUITests";
+			sourceTree = "<group>";
+		};
+		C372EF6223E243D000101A56 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C372EF6323E243D000101A56 /* MeLiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C372EF6423E243D000101A56 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C372EF6523E243D000101A56 /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C372EF6823E246C200101A56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C372EF6923E246CE00101A56 /* SearchItemsResponse.swift */,
+				C372EF6B23E249CF00101A56 /* Colors.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +427,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C372EF3623E23A8900101A56 /* ViewController.swift in Sources */,
+				C372EF6723E243D100101A56 /* HomeViewController.swift in Sources */,
+				C372EF6623E243D100101A56 /* MeLiService.swift in Sources */,
+				C372EF6C23E249CF00101A56 /* Colors.swift in Sources */,
+				C372EF6A23E246CE00101A56 /* SearchItemsResponse.swift in Sources */,
 				C372EF3223E23A8900101A56 /* AppDelegate.swift in Sources */,
 				C372EF3423E23A8900101A56 /* SceneDelegate.swift in Sources */,
 			);
@@ -501,13 +537,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -555,12 +592,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
