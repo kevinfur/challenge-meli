@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		3DD6605E222821E318A770FC /* Pods_challenge_meli.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E777A450AF45DB80C416AE /* Pods_challenge_meli.framework */; };
 		695E87E63DC290A622039DE2 /* Pods_challenge_meliTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A75AD5B7AC272C94282F0A8 /* Pods_challenge_meliTests.framework */; };
+		C337284323E4C4CE00929121 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337284223E4C4CE00929121 /* SearchViewController.swift */; };
+		C337284623E4C59500929121 /* SearchHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C337284523E4C59500929121 /* SearchHeaderView.xib */; };
+		C337284823E4C6B400929121 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337284723E4C6B400929121 /* SearchHeaderView.swift */; };
+		C337284B23E4C75E00929121 /* UIView+NibInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337284A23E4C75E00929121 /* UIView+NibInstantiable.swift */; };
+		C337284D23E4C84E00929121 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337284C23E4C84E00929121 /* ItemsTableViewController.swift */; };
+		C337285023E4E31000929121 /* SearchPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337284F23E4E31000929121 /* SearchPresentAnimationController.swift */; };
+		C337285223E669BA00929121 /* UIView+PinToSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337285123E669BA00929121 /* UIView+PinToSuperview.swift */; };
+		C337285423E7B27700929121 /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337285323E7B27700929121 /* UINavigationController+StatusBar.swift */; };
 		C372EF3223E23A8900101A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF3123E23A8900101A56 /* AppDelegate.swift */; };
 		C372EF3423E23A8900101A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF3323E23A8900101A56 /* SceneDelegate.swift */; };
 		C372EF3923E23A8900101A56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C372EF3723E23A8900101A56 /* Main.storyboard */; };
@@ -49,6 +57,14 @@
 		47F1B465C656694AC625A6A7 /* Pods-challenge-meliTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challenge-meliTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-challenge-meliTests/Pods-challenge-meliTests.release.xcconfig"; sourceTree = "<group>"; };
 		69E5BCABB8721F5FB64C6F3E /* Pods-challenge-meliTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challenge-meliTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-challenge-meliTests/Pods-challenge-meliTests.debug.xcconfig"; sourceTree = "<group>"; };
 		770611F905284346FD6AAD9A /* Pods_challenge_meliUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challenge_meliUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C337284223E4C4CE00929121 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C337284523E4C59500929121 /* SearchHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHeaderView.xib; sourceTree = "<group>"; };
+		C337284723E4C6B400929121 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
+		C337284A23E4C75E00929121 /* UIView+NibInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibInstantiable.swift"; sourceTree = "<group>"; };
+		C337284C23E4C84E00929121 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		C337284F23E4E31000929121 /* SearchPresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresentAnimationController.swift; sourceTree = "<group>"; };
+		C337285123E669BA00929121 /* UIView+PinToSuperview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+PinToSuperview.swift"; sourceTree = "<group>"; };
+		C337285323E7B27700929121 /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
 		C372EF2E23E23A8900101A56 /* challenge-meli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "challenge-meli.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C372EF3123E23A8900101A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C372EF3323E23A8900101A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +136,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C337284423E4C56C00929121 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C337284523E4C59500929121 /* SearchHeaderView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C337284923E4C75500929121 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C337284A23E4C75E00929121 /* UIView+NibInstantiable.swift */,
+				C337285123E669BA00929121 /* UIView+PinToSuperview.swift */,
+				C337285323E7B27700929121 /* UINavigationController+StatusBar.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C337284E23E4E2F700929121 /* Custom Transition */ = {
+			isa = PBXGroup;
+			children = (
+				C337284F23E4E31000929121 /* SearchPresentAnimationController.swift */,
+			);
+			path = "Custom Transition";
+			sourceTree = "<group>";
+		};
 		C372EF2523E23A8900101A56 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +187,9 @@
 		C372EF3023E23A8900101A56 /* challenge-meli */ = {
 			isa = PBXGroup;
 			children = (
+				C337284E23E4E2F700929121 /* Custom Transition */,
+				C337284923E4C75500929121 /* Utils */,
+				C337284423E4C56C00929121 /* Views */,
 				C372EF6223E243D000101A56 /* Services */,
 				C372EF6423E243D000101A56 /* Controllers */,
 				C372EF6823E246C200101A56 /* Models */,
@@ -188,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				C372EF6523E243D000101A56 /* HomeViewController.swift */,
+				C337284223E4C4CE00929121 /* SearchViewController.swift */,
+				C337284C23E4C84E00929121 /* ItemsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +244,7 @@
 			children = (
 				C372EF6923E246CE00101A56 /* SearchItemsResponse.swift */,
 				C372EF6B23E249CF00101A56 /* Colors.swift */,
+				C337284723E4C6B400929121 /* SearchHeaderView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +360,7 @@
 				C372EF3E23E23A8A00101A56 /* LaunchScreen.storyboard in Resources */,
 				C372EF3B23E23A8A00101A56 /* Assets.xcassets in Resources */,
 				C372EF3923E23A8900101A56 /* Main.storyboard in Resources */,
+				C337284623E4C59500929121 /* SearchHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,10 +477,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C372EF6723E243D100101A56 /* HomeViewController.swift in Sources */,
+				C337284323E4C4CE00929121 /* SearchViewController.swift in Sources */,
+				C337284D23E4C84E00929121 /* ItemsTableViewController.swift in Sources */,
 				C372EF6623E243D100101A56 /* MeLiService.swift in Sources */,
+				C337284823E4C6B400929121 /* SearchHeaderView.swift in Sources */,
 				C372EF6C23E249CF00101A56 /* Colors.swift in Sources */,
+				C337284B23E4C75E00929121 /* UIView+NibInstantiable.swift in Sources */,
+				C337285423E7B27700929121 /* UINavigationController+StatusBar.swift in Sources */,
 				C372EF6A23E246CE00101A56 /* SearchItemsResponse.swift in Sources */,
 				C372EF3223E23A8900101A56 /* AppDelegate.swift in Sources */,
+				C337285023E4E31000929121 /* SearchPresentAnimationController.swift in Sources */,
+				C337285223E669BA00929121 /* UIView+PinToSuperview.swift in Sources */,
 				C372EF3423E23A8900101A56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

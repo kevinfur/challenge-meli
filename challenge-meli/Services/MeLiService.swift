@@ -14,7 +14,7 @@ struct MeLiService {
     private init() { }
     
     struct Constants {
-        static let APIPath = "https://api.mercadolibre.com/sites/MLA"
+        static let BaseURL = "https://api.mercadolibre.com/sites/MLA"
     }
     
     enum Errors: Error {
@@ -27,7 +27,7 @@ struct MeLiService {
             return
         }
         
-        let url = Constants.APIPath + "/search"
+        let url = Constants.BaseURL + "/search"
         
         let parameters: Parameters = ["q": encodedQuery]
         
