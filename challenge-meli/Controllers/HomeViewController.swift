@@ -47,8 +47,7 @@ extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         
-        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle(for: type(of: self)))
-        guard let searchVC = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }        
+        guard let searchBarText = searchBar.text, let searchVC = SearchViewController.make(query: searchBarText) else { return }
         
         let navController = UINavigationController(rootViewController: searchVC)
         navController.transitioningDelegate = self

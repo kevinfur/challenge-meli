@@ -61,7 +61,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DeH-fe-Rcu">
                                 <rect key="frame" x="0.0" y="54" width="414" height="896"/>
                                 <connections>
-                                    <segue destination="eep-RJ-lyh" kind="embed" id="8oB-OM-gh6"/>
+                                    <segue destination="eep-RJ-lyh" kind="embed" identifier="embedItemsTableSegue" id="8oB-OM-gh6"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="1921.7391304347827" y="112.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Items Table View Controller-->
         <scene sceneID="Qst-OH-ESs">
             <objects>
-                <tableViewController id="eep-RJ-lyh" sceneMemberID="viewController">
+                <tableViewController id="eep-RJ-lyh" customClass="ItemsTableViewController" customModule="challenge_meli" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4lq-wy-dqU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

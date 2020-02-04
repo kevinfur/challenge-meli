@@ -11,11 +11,11 @@ import Foundation
 struct SearchItemsResponse: Decodable {
     
     public let query: String
-    public let results: [Item]
+    public let results: [SearchItem]
     
 }
 
-struct Item: Decodable {
+struct SearchItem: Decodable {
     
     public let id: String
     public let title: String
