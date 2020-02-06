@@ -29,14 +29,13 @@ class SearchPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
     containerView.addSubview(toVC.view)
     toVC.view.pinToSuperview()
     
-        containerView.addSubview(fromVC.view)
+    containerView.addSubview(fromVC.view)
     
-        fromVC.view.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: ["view": fromView]))
-        let fromViewBottomConstraint = NSLayoutConstraint(item: containerView, attribute: .bottom, relatedBy: .equal, toItem: fromView, attribute: .bottom, multiplier: 1, constant: 0)
-        containerView.addConstraint(fromViewBottomConstraint)
-    let fromViewTopConstraint = NSLayoutConstraint(item: fromView, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1, constant: 0)
-        containerView.addConstraint(fromViewTopConstraint)
+    fromVC.view.translatesAutoresizingMaskIntoConstraints = false
+    containerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: ["view": fromView]))
+    let fromViewBottomConstraint = NSLayoutConstraint(item: containerView, attribute: .bottom, relatedBy: .equal, toItem: fromView, attribute: .bottom, multiplier: 1, constant: 0)
+    containerView.addConstraint(fromViewBottomConstraint)
+    containerView.addConstraint(NSLayoutConstraint(item: fromView, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1, constant: 0))
     
     let duration = transitionDuration(using: transitionContext)
     
@@ -52,8 +51,7 @@ class SearchPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
     
     UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: {
         fromViewBottomConstraint.constant = UIApplication.shared.windows[0].frame.height - toVC.view.safeAreaInsets.top - (toVC.children.first?.navigationController?.navigationBar.frame.height ?? 0)
-        fromVC.stackTopConstraint?.constant = -45
-        fromViewTopConstraint.constant = toVC.view.safeAreaInsets.top
+        fromVC.stackTopConstraint?.constant = toVC.view.safeAreaInsets.top
         containerView.layoutIfNeeded()
     }, completion: { _ in
         fromView.removeFromSuperview()

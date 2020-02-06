@@ -4,6 +4,7 @@ target 'challenge-meli' do
   use_frameworks!
 
   pod 'Alamofire', '~> 4.0'
+  pod 'Kingfisher', '~> 5.13'
 
   target 'challenge-meliTests' do
     inherit! :search_paths

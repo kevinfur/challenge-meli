@@ -14,12 +14,3 @@ struct SearchItemsResponse: Decodable {
     public let results: [SearchItem]
     
 }
-
-struct SearchItem: Decodable {
-    
-    public let id: String
-    public let title: String
-    public let price: Double
-    public let thumbnail: String
-    
-}

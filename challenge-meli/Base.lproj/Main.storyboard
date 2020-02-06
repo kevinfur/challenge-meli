@@ -33,7 +33,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XEP-gA-f5H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="VoF-JS-AIq"/>
+                            <constraint firstItem="XEP-gA-f5H" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="129" id="VoF-JS-AIq"/>
                             <constraint firstItem="XEP-gA-f5H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="u97-Rq-nda"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XEP-gA-f5H" secondAttribute="trailing" constant="12" id="xka-dD-I6y"/>
                         </constraints>
@@ -59,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DeH-fe-Rcu">
-                                <rect key="frame" x="0.0" y="54" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <connections>
                                     <segue destination="eep-RJ-lyh" kind="embed" identifier="embedItemsTableSegue" id="8oB-OM-gh6"/>
                                 </connections>
@@ -88,16 +88,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OM8-8J-j49">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OM8-8J-j49" id="ZEm-uP-fHu">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="eep-RJ-lyh" id="vqP-KI-JaS"/>
                             <outlet property="delegate" destination="eep-RJ-lyh" id="Jpn-ZU-Jrh"/>

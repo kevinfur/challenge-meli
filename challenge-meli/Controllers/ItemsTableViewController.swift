@@ -20,6 +20,13 @@ class ItemsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerCell(ItemCell.self)
+    }
+    
+    private func registerCell<T>(_ cellType: T.Type) {
+        let nibCell = UINib(nibName: "\(cellType.self)", bundle: Bundle(for: type(of: self)))
+        tableView.register(nibCell, forCellReuseIdentifier: "\(cellType.self)")
     }
 
 }
@@ -37,13 +44,9 @@ extension ItemsTableViewController {
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.row]
         
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(Cell.self)", for: indexPath) as? Cell else { return UITableViewCell()}
-        
-        let cell = UITableViewCell()
-        let label = UILabel()
-        label.text = item.title
-        cell.addSubview(label)
-        label.pinToSuperview()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(ItemCell.self)", for: indexPath) as? ItemCell else { return UITableViewCell()}
+
+        cell.configure(with: item)
         
         return cell
     }

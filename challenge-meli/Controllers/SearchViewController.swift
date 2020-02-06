@@ -37,7 +37,8 @@ class SearchViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = true
         searchController.searchBar.placeholder = "Buscar productos, marcas y más..."
         searchController.searchBar.searchTextField.backgroundColor = UIColor.white
-//        self.definesPresentationContext = true
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.definesPresentationContext = true
         
         navigationItem.titleView = searchController.searchBar
         
