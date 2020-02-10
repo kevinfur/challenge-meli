@@ -12,11 +12,13 @@ extension Double {
     
     func toPriceString() -> String {
         let priceFormatter = NumberFormatter()
-        priceFormatter.numberStyle = .currency
+        priceFormatter.numberStyle = .decimal
         priceFormatter.maximumFractionDigits = 0
-        priceFormatter.locale = Locale(identifier: "es_AR")
-        let priceString = priceFormatter.string(from: self as NSNumber)?.replacingOccurrences(of: " ", with: "")
-        return priceString ?? ""
+        priceFormatter.groupingSeparator = "."
+        if let priceString = priceFormatter.string(from: self as NSNumber)?.replacingOccurrences(of: " ", with: "") {
+            return "$" + priceString
+        }
+        return ""
     }
     
 }

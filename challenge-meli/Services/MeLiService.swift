@@ -14,7 +14,7 @@ struct MeLiService {
     private init() { }
     
     struct Constants {
-        static let BaseURL = "https://api.mercadolibre.com/sites/MLA"
+        static let BaseURL = "https://api.mercadolibre.com"
     }
     
     enum Errors: Error {
@@ -27,7 +27,7 @@ struct MeLiService {
             return
         }
         
-        let url = Constants.BaseURL + "/search"
+        let url = Constants.BaseURL + "/sites/MLA/search"
         
         let parameters: Parameters = ["q": encodedQuery]
         
@@ -39,6 +39,33 @@ struct MeLiService {
                 do {
                     if let data = response.data {
                         let response = try decoder.decode(SearchItemsResponse.self, from: data)
+                        completion(response, nil)
+                    }
+                } catch let error {
+                    print(error)
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                print(error)
+                completion(nil, error)
+            }
+            
+        }
+    }
+    
+    static func fetchItem(id: String, completion: @escaping (ItemDetailResponse?, Error?) -> ()) {
+        let url = Constants.BaseURL + "/items"
+        
+        let parameters: Parameters = ["ids": id]
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            
+            switch response.result {
+            case .success(_):
+                let decoder = JSONDecoder()
+                do {
+                    if let data = response.data {
+                        let response = try decoder.decode(ItemDetailResponse.self, from: data)
                         completion(response, nil)
                     }
                 } catch let error {

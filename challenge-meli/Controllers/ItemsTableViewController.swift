@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ItemsTableViewControllerDelegate: class {
+    func itemHasBeenSelected(_ item: SearchItem)
+}
+
 class ItemsTableViewController: UITableViewController {
+    
+    weak var delegate: ItemsTableViewControllerDelegate?
     
     var items: [SearchItem] = [] {
         didSet {
@@ -33,6 +39,10 @@ class ItemsTableViewController: UITableViewController {
 
 extension ItemsTableViewController {
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 68
+    }
+    
     public override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -53,7 +63,7 @@ extension ItemsTableViewController {
 
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.row]
-        print(item)
+        delegate?.itemHasBeenSelected(item)
     }
     
 }

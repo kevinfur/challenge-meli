@@ -52,6 +52,7 @@ class SearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "embedItemsTableSegue", let itemsTVC = segue.destination as? ItemsTableViewController {
             itemsTableViewController = itemsTVC
+            itemsTableViewController?.delegate = self
         }
     }
     
@@ -66,4 +67,14 @@ class SearchViewController: UIViewController {
         return .darkContent
     }
 
+}
+
+extension SearchViewController: ItemsTableViewControllerDelegate {
+    
+    func itemHasBeenSelected(_ item: SearchItem) {
+        if let itemDetailVC = ItemDetailViewController.make(id: item.id) {
+            navigationController?.pushViewController(itemDetailVC, animated: true)
+        }
+    }
+    
 }

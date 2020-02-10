@@ -31,6 +31,8 @@
 		C3B9841323EBAC1000126126 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C337284523E4C59500929121 /* ItemCell.xib */; };
 		C3B9841523EBB71300126126 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841423EBB71300126126 /* SearchItem.swift */; };
 		C3B9841723EBB7D800126126 /* Double+Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841623EBB7D800126126 /* Double+Price.swift */; };
+		C3F9446C23F0D881002049F9 /* ItemDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F9446B23F0D881002049F9 /* ItemDetailResponse.swift */; };
+		C3F9446E23F0DDAF002049F9 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F9446D23F0DDAF002049F9 /* ItemDetailViewController.swift */; };
 		DD85E18BB1BEB612A1E1A37E /* Pods_challenge_meliUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770611F905284346FD6AAD9A /* Pods_challenge_meliUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		C3B9841023EBAB5200126126 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		C3B9841423EBB71300126126 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		C3B9841623EBB7D800126126 /* Double+Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Price.swift"; sourceTree = "<group>"; };
+		C3F9446B23F0D881002049F9 /* ItemDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailResponse.swift; sourceTree = "<group>"; };
+		C3F9446D23F0DDAF002049F9 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		D05CBE3766A65DD6E7F01BEC /* Pods-challenge-meliUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challenge-meliUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-challenge-meliUITests/Pods-challenge-meliUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +246,7 @@
 				C372EF6523E243D000101A56 /* HomeViewController.swift */,
 				C337284223E4C4CE00929121 /* SearchViewController.swift */,
 				C337284C23E4C84E00929121 /* ItemsTableViewController.swift */,
+				C3F9446D23F0DDAF002049F9 /* ItemDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				C337284723E4C6B400929121 /* SearchHeaderView.swift */,
 				C3B9841023EBAB5200126126 /* ItemCell.swift */,
 				C3B9841423EBB71300126126 /* SearchItem.swift */,
+				C3F9446B23F0D881002049F9 /* ItemDetailResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -492,6 +498,7 @@
 				C337284D23E4C84E00929121 /* ItemsTableViewController.swift in Sources */,
 				C372EF6623E243D100101A56 /* MeLiService.swift in Sources */,
 				C3B9841223EBABFB00126126 /* ItemCell.swift in Sources */,
+				C3F9446C23F0D881002049F9 /* ItemDetailResponse.swift in Sources */,
 				C337284823E4C6B400929121 /* SearchHeaderView.swift in Sources */,
 				C3B9841723EBB7D800126126 /* Double+Price.swift in Sources */,
 				C372EF6C23E249CF00101A56 /* Colors.swift in Sources */,
@@ -500,6 +507,7 @@
 				C3B9841523EBB71300126126 /* SearchItem.swift in Sources */,
 				C372EF6A23E246CE00101A56 /* SearchItemsResponse.swift in Sources */,
 				C372EF3223E23A8900101A56 /* AppDelegate.swift in Sources */,
+				C3F9446E23F0DDAF002049F9 /* ItemDetailViewController.swift in Sources */,
 				C337285023E4E31000929121 /* SearchPresentAnimationController.swift in Sources */,
 				C337285223E669BA00929121 /* UIView+PinToSuperview.swift in Sources */,
 				C372EF3423E23A8900101A56 /* SceneDelegate.swift in Sources */,
