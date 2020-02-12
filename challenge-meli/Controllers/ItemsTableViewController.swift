@@ -27,6 +27,12 @@ class ItemsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.tableFooterView = UIView()
+        
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.startAnimating()
+        tableView.backgroundView = spinner
+        
         registerCell(ItemCell.self)
     }
     

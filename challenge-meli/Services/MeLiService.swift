@@ -79,5 +79,30 @@ struct MeLiService {
             
         }
     }
+    
+    static func fetchDescription(id: String, completion: @escaping (DescriptionResponse?, Error?) -> ()) {
+        let url = Constants.BaseURL + "/items/" + id + "/description"
+        
+        Alamofire.request(url, method: .get, parameters: [:], encoding: URLEncoding.default).responseJSON { response in
+            
+            switch response.result {
+            case .success(_):
+                let decoder = JSONDecoder()
+                do {
+                    if let data = response.data {
+                        let response = try decoder.decode(DescriptionResponse.self, from: data)
+                        completion(response, nil)
+                    }
+                } catch let error {
+                    print(error)
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                print(error)
+                completion(nil, error)
+            }
+            
+        }
+    }
 
 }

@@ -12,19 +12,7 @@ class SearchViewController: UIViewController {
     
     private var query: String? {
         didSet {
-            guard let query = query else { return }
-            searchController.searchBar.text = query
-            MeLiService.searchItems(query: query, completion: { [weak self] (response, error) in
-                guard let strongSelf = self else { return }
-                
-                switch (response, error) {
-                case (let .some(response), .none):
-                    strongSelf.itemsTableViewController?.items = response.results
-                case (.none, let .some(error)):
-                    print(error)
-                default: break
-                }
-            })
+            searchItems()
         }
     }
     
@@ -38,6 +26,7 @@ class SearchViewController: UIViewController {
         searchController.searchBar.placeholder = "Buscar productos, marcas y más..."
         searchController.searchBar.searchTextField.backgroundColor = UIColor.white
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
         self.definesPresentationContext = true
         
         navigationItem.titleView = searchController.searchBar
@@ -47,6 +36,27 @@ class SearchViewController: UIViewController {
         
         navigationItem.hidesBackButton = true
         navigationItem.leftBarButtonItem = nil
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = Colors.blackTone2
+    }
+    
+    private func searchItems() {
+        guard let query = query else { return }
+        
+        itemsTableViewController?.items = []
+        searchController.searchBar.text = query
+        MeLiService.searchItems(query: query, completion: { [weak self] (response, error) in
+            guard let strongSelf = self else { return }
+            
+            switch (response, error) {
+            case (let .some(response), .none):
+                strongSelf.itemsTableViewController?.items = response.results
+            case (.none, let .some(error)):
+                print(error)
+            default: break
+            }
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,6 +85,17 @@ extension SearchViewController: ItemsTableViewControllerDelegate {
         if let itemDetailVC = ItemDetailViewController.make(id: item.id) {
             navigationController?.pushViewController(itemDetailVC, animated: true)
         }
+    }
+    
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchBarText = searchBar.text else { return }
+        searchBar.resignFirstResponder()
+        searchController.isActive = false
+        query = searchBarText
     }
     
 }

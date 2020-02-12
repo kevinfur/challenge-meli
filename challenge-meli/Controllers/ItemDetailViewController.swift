@@ -13,20 +13,60 @@ class ItemDetailViewController: UIViewController {
 
     var id: String?
   
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var picturesStackView: UIStackView!
+    @IBOutlet weak var picturesScrollView: UIScrollView!
+    
+    @IBOutlet weak var descriptionView: UIView!
+    @IBOutlet weak var commentsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let id = id else { return }
+        
         MeLiService.fetchItem(id: id, completion: { [weak self] (response, error) in
             guard let strongSelf = self else { return }
             
             switch (response, error) {
             case (let .some(response), .none):
-                print(response)
+                strongSelf.loadData(from: response)
             case (.none, let .some(error)):
                 print(error)
             default: break
             }
+        })
+        
+        picturesScrollView.alwaysBounceHorizontal = true
+        picturesScrollView.showsHorizontalScrollIndicator = false
+        picturesScrollView.isPagingEnabled = true
+        picturesScrollView.backgroundColor = UIColor.white
+        
+        descriptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapGoToDescription)))
+        descriptionView.isUserInteractionEnabled = true
+    }
+    
+    @objc func didTapGoToDescription() {
+        guard let id = id, let descriptionVC = DescriptionViewController.make(id: id) else { return }        
+        navigationController?.pushViewController(descriptionVC, animated: true)
+    }
+    
+    private func loadData(from item: ItemDetailResponse) {
+        titleLabel.text = item.title
+        priceLabel.text = item.price.toPriceString()
+        
+        picturesStackView.removeAllSubviews()
+        item.pictures.forEach({ pictureURL in
+            let imageView = UIImageView()
+            
+            imageView.contentMode = .scaleAspectFit
+            imageView.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: picturesScrollView.frame.size.height).isActive = true
+            
+            imageView.kf.setImage(with: pictureURL)
+            
+            picturesStackView.addArrangedSubview(imageView)
         })
     }
     

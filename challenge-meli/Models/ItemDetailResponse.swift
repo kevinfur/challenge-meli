@@ -11,6 +11,7 @@ import Foundation
 struct ItemDetailResponse: Decodable {
     
     let id: String
+    let title: String
     let description: String?
     let pictures: [URL]
     let price: Double
@@ -21,6 +22,7 @@ struct ItemDetailResponse: Decodable {
 
     enum ItemKeys: String, CodingKey {
         case id
+        case title
         case descriptions
         case pictures
         case price
@@ -33,6 +35,7 @@ struct ItemDetailResponse: Decodable {
         let bodyContainer = try rootContainer.nestedContainer(keyedBy: ItemKeys.self, forKey: .body)
 
         id = try bodyContainer.decode(String.self, forKey: .id)
+        title = try bodyContainer.decode(String.self, forKey: .title)
         
         let descriptions = try bodyContainer.decode([Description].self, forKey: .descriptions)
         description = descriptions.first?.id
