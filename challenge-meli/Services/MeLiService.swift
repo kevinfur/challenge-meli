@@ -104,5 +104,35 @@ struct MeLiService {
             
         }
     }
+    
+    static func fetchQuestions(id: String, completion: @escaping (QuestionsResponse?, Error?) -> ()) {
+        let url = Constants.BaseURL + "/questions/search"
+        
+        let parameters: Parameters = ["item": id]
+        
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            
+            switch response.result {
+            case .success(_):
+                let decoder = JSONDecoder()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                do {
+                    if let data = response.data {
+                        let response = try decoder.decode(QuestionsResponse.self, from: data)
+                        completion(response, nil)
+                    }
+                } catch let error {
+                    print(error)
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                print(error)
+                completion(nil, error)
+            }
+            
+        }
+    }
 
 }

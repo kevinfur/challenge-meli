@@ -19,7 +19,7 @@ class ItemDetailViewController: UIViewController {
     @IBOutlet weak var picturesScrollView: UIScrollView!
     
     @IBOutlet weak var descriptionView: UIView!
-    @IBOutlet weak var commentsView: UIView!
+    @IBOutlet weak var questionsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +45,22 @@ class ItemDetailViewController: UIViewController {
         
         descriptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapGoToDescription)))
         descriptionView.isUserInteractionEnabled = true
+        
+        questionsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapGoToQuestions)))
+        questionsView.isUserInteractionEnabled = true
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = Colors.blackTone2
     }
     
     @objc func didTapGoToDescription() {
         guard let id = id, let descriptionVC = DescriptionViewController.make(id: id) else { return }        
         navigationController?.pushViewController(descriptionVC, animated: true)
+    }
+    
+    @objc func didTapGoToQuestions() {
+        guard let id = id, let questionsVC = QuestionsTableViewController.make(id: id) else { return }
+        navigationController?.pushViewController(questionsVC, animated: true)
     }
     
     private func loadData(from item: ItemDetailResponse) {

@@ -312,17 +312,35 @@
                         <viewLayoutGuide key="safeArea" id="6fg-hN-vFo"/>
                     </view>
                     <connections>
-                        <outlet property="commentsView" destination="ris-8c-OdI" id="ME9-3O-awx"/>
                         <outlet property="descriptionView" destination="6Qr-VY-P3G" id="l1I-Ki-9HC"/>
                         <outlet property="picturesScrollView" destination="ASh-gc-f8x" id="a5Y-kO-cF1"/>
                         <outlet property="picturesStackView" destination="pWr-2C-Jjf" id="zBN-vb-ndu"/>
                         <outlet property="priceLabel" destination="bxk-vp-Wh4" id="k5H-VY-tR5"/>
+                        <outlet property="questionsView" destination="ris-8c-OdI" id="cTR-1S-jmz"/>
                         <outlet property="titleLabel" destination="NqO-w5-Ruv" id="HDm-ym-DCT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KbB-JN-aH1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2788" y="113"/>
+        </scene>
+        <!--Questions Table View Controller-->
+        <scene sceneID="0tB-my-CUJ">
+            <objects>
+                <tableViewController storyboardIdentifier="QuestionsTableViewController" id="3se-B0-ebr" customClass="QuestionsTableViewController" customModule="challenge_meli" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Ch-aA-FIE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="3se-B0-ebr" id="c2D-ry-eV0"/>
+                            <outlet property="delegate" destination="3se-B0-ebr" id="FZR-no-tS2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YoE-nB-lum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3651" y="390"/>
         </scene>
         <!--Description View Controller-->
         <scene sceneID="4NU-Ld-MOQ">
@@ -390,12 +408,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OrG-xy-l3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3693" y="113"/>
+            <point key="canvasLocation" x="3651" y="-302"/>
         </scene>
         <!--Items Table View Controller-->
         <scene sceneID="Qst-OH-ESs">
             <objects>
-                <tableViewController id="eep-RJ-lyh" customClass="ItemsTableViewController" customModule="challenge_meli" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ItemsTableViewController" id="eep-RJ-lyh" customClass="ItemsTableViewController" customModule="challenge_meli" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4lq-wy-dqU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -18,6 +18,11 @@
 		C337285423E7B27700929121 /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337285323E7B27700929121 /* UINavigationController+StatusBar.swift */; };
 		C3529D7C23F3976F0063E0BE /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3529D7B23F3976F0063E0BE /* DescriptionViewController.swift */; };
 		C3529D7E23F398440063E0BE /* DescriptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3529D7D23F398440063E0BE /* DescriptionResponse.swift */; };
+		C3529D8023F4FBB20063E0BE /* QuestionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3529D7F23F4FBB20063E0BE /* QuestionsResponse.swift */; };
+		C3529D8223F4FC740063E0BE /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3529D8123F4FC740063E0BE /* Question.swift */; };
+		C3529D8723F600C20063E0BE /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3529D8523F600740063E0BE /* QuestionCell.swift */; };
+		C3529D8823F600CA0063E0BE /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3529D8323F5FA7E0063E0BE /* QuestionCell.xib */; };
+		C3529D8A23F601A70063E0BE /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3529D8923F601A70063E0BE /* QuestionsTableViewController.swift */; };
 		C372EF3223E23A8900101A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF3123E23A8900101A56 /* AppDelegate.swift */; };
 		C372EF3423E23A8900101A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF3323E23A8900101A56 /* SceneDelegate.swift */; };
 		C372EF3923E23A8900101A56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C372EF3723E23A8900101A56 /* Main.storyboard */; };
@@ -29,6 +34,7 @@
 		C372EF6723E243D100101A56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6523E243D000101A56 /* HomeViewController.swift */; };
 		C372EF6A23E246CE00101A56 /* SearchItemsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6923E246CE00101A56 /* SearchItemsResponse.swift */; };
 		C372EF6C23E249CF00101A56 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6B23E249CF00101A56 /* Colors.swift */; };
+		C391950823F65357002EE864 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391950723F65357002EE864 /* Answer.swift */; };
 		C3B9841223EBABFB00126126 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841023EBAB5200126126 /* ItemCell.swift */; };
 		C3B9841323EBAC1000126126 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C337284523E4C59500929121 /* ItemCell.xib */; };
 		C3B9841523EBB71300126126 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841423EBB71300126126 /* SearchItem.swift */; };
@@ -75,6 +81,11 @@
 		C337285323E7B27700929121 /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
 		C3529D7B23F3976F0063E0BE /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		C3529D7D23F398440063E0BE /* DescriptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionResponse.swift; sourceTree = "<group>"; };
+		C3529D7F23F4FBB20063E0BE /* QuestionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsResponse.swift; sourceTree = "<group>"; };
+		C3529D8123F4FC740063E0BE /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		C3529D8323F5FA7E0063E0BE /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		C3529D8523F600740063E0BE /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		C3529D8923F601A70063E0BE /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		C372EF2E23E23A8900101A56 /* challenge-meli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "challenge-meli.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C372EF3123E23A8900101A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C372EF3323E23A8900101A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +103,7 @@
 		C372EF6523E243D000101A56 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C372EF6923E246CE00101A56 /* SearchItemsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsResponse.swift; sourceTree = "<group>"; };
 		C372EF6B23E249CF00101A56 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C391950723F65357002EE864 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		C3B9841023EBAB5200126126 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		C3B9841423EBB71300126126 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		C3B9841623EBB7D800126126 /* Double+Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Price.swift"; sourceTree = "<group>"; };
@@ -156,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				C337284523E4C59500929121 /* ItemCell.xib */,
+				C3529D8323F5FA7E0063E0BE /* QuestionCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,6 +268,7 @@
 				C337284C23E4C84E00929121 /* ItemsTableViewController.swift */,
 				C3F9446D23F0DDAF002049F9 /* ItemDetailViewController.swift */,
 				C3529D7B23F3976F0063E0BE /* DescriptionViewController.swift */,
+				C3529D8923F601A70063E0BE /* QuestionsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +283,10 @@
 				C3B9841423EBB71300126126 /* SearchItem.swift */,
 				C3F9446B23F0D881002049F9 /* ItemDetailResponse.swift */,
 				C3529D7D23F398440063E0BE /* DescriptionResponse.swift */,
+				C3529D7F23F4FBB20063E0BE /* QuestionsResponse.swift */,
+				C3529D8123F4FC740063E0BE /* Question.swift */,
+				C3529D8523F600740063E0BE /* QuestionCell.swift */,
+				C391950723F65357002EE864 /* Answer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,6 +401,7 @@
 			files = (
 				C3B9841323EBAC1000126126 /* ItemCell.xib in Resources */,
 				C372EF3E23E23A8A00101A56 /* LaunchScreen.storyboard in Resources */,
+				C3529D8823F600CA0063E0BE /* QuestionCell.xib in Resources */,
 				C372EF3B23E23A8A00101A56 /* Assets.xcassets in Resources */,
 				C372EF3923E23A8900101A56 /* Main.storyboard in Resources */,
 			);
@@ -508,6 +527,9 @@
 				C3529D7E23F398440063E0BE /* DescriptionResponse.swift in Sources */,
 				C372EF6623E243D100101A56 /* MeLiService.swift in Sources */,
 				C3F9447023F31108002049F9 /* UIStackView+RemoveAllSubviews.swift in Sources */,
+				C3529D8A23F601A70063E0BE /* QuestionsTableViewController.swift in Sources */,
+				C391950823F65357002EE864 /* Answer.swift in Sources */,
+				C3529D8023F4FBB20063E0BE /* QuestionsResponse.swift in Sources */,
 				C3B9841223EBABFB00126126 /* ItemCell.swift in Sources */,
 				C3F9446C23F0D881002049F9 /* ItemDetailResponse.swift in Sources */,
 				C337284823E4C6B400929121 /* SearchHeaderView.swift in Sources */,
@@ -519,8 +541,10 @@
 				C3529D7C23F3976F0063E0BE /* DescriptionViewController.swift in Sources */,
 				C372EF6A23E246CE00101A56 /* SearchItemsResponse.swift in Sources */,
 				C372EF3223E23A8900101A56 /* AppDelegate.swift in Sources */,
+				C3529D8223F4FC740063E0BE /* Question.swift in Sources */,
 				C3F9446E23F0DDAF002049F9 /* ItemDetailViewController.swift in Sources */,
 				C337285023E4E31000929121 /* SearchPresentAnimationController.swift in Sources */,
+				C3529D8723F600C20063E0BE /* QuestionCell.swift in Sources */,
 				C337285223E669BA00929121 /* UIView+PinToSuperview.swift in Sources */,
 				C372EF3423E23A8900101A56 /* SceneDelegate.swift in Sources */,
 			);
