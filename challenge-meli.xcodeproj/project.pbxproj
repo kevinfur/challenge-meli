@@ -35,6 +35,7 @@
 		C372EF6A23E246CE00101A56 /* SearchItemsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6923E246CE00101A56 /* SearchItemsResponse.swift */; };
 		C372EF6C23E249CF00101A56 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6B23E249CF00101A56 /* Colors.swift */; };
 		C391950823F65357002EE864 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391950723F65357002EE864 /* Answer.swift */; };
+		C391950C23F89CA4002EE864 /* Date+AsString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391950B23F89CA4002EE864 /* Date+AsString.swift */; };
 		C3B9841223EBABFB00126126 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841023EBAB5200126126 /* ItemCell.swift */; };
 		C3B9841323EBAC1000126126 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C337284523E4C59500929121 /* ItemCell.xib */; };
 		C3B9841523EBB71300126126 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841423EBB71300126126 /* SearchItem.swift */; };
@@ -104,6 +105,7 @@
 		C372EF6923E246CE00101A56 /* SearchItemsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsResponse.swift; sourceTree = "<group>"; };
 		C372EF6B23E249CF00101A56 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C391950723F65357002EE864 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		C391950B23F89CA4002EE864 /* Date+AsString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+AsString.swift"; sourceTree = "<group>"; };
 		C3B9841023EBAB5200126126 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		C3B9841423EBB71300126126 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		C3B9841623EBB7D800126126 /* Double+Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Price.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,8 @@
 				C337285323E7B27700929121 /* UINavigationController+StatusBar.swift */,
 				C3B9841623EBB7D800126126 /* Double+Price.swift */,
 				C3F9446F23F31108002049F9 /* UIStackView+RemoveAllSubviews.swift */,
+				C372EF6B23E249CF00101A56 /* Colors.swift */,
+				C391950B23F89CA4002EE864 /* Date+AsString.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -276,19 +280,34 @@
 		C372EF6823E246C200101A56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C391950A23F89C28002EE864 /* Views */,
+				C391950923F89BB4002EE864 /* Cells */,
 				C372EF6923E246CE00101A56 /* SearchItemsResponse.swift */,
-				C372EF6B23E249CF00101A56 /* Colors.swift */,
-				C337284723E4C6B400929121 /* SearchHeaderView.swift */,
-				C3B9841023EBAB5200126126 /* ItemCell.swift */,
-				C3B9841423EBB71300126126 /* SearchItem.swift */,
 				C3F9446B23F0D881002049F9 /* ItemDetailResponse.swift */,
 				C3529D7D23F398440063E0BE /* DescriptionResponse.swift */,
 				C3529D7F23F4FBB20063E0BE /* QuestionsResponse.swift */,
+				C3B9841423EBB71300126126 /* SearchItem.swift */,
 				C3529D8123F4FC740063E0BE /* Question.swift */,
-				C3529D8523F600740063E0BE /* QuestionCell.swift */,
 				C391950723F65357002EE864 /* Answer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C391950923F89BB4002EE864 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C3B9841023EBAB5200126126 /* ItemCell.swift */,
+				C3529D8523F600740063E0BE /* QuestionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C391950A23F89C28002EE864 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C337284723E4C6B400929121 /* SearchHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,6 +563,7 @@
 				C3529D8223F4FC740063E0BE /* Question.swift in Sources */,
 				C3F9446E23F0DDAF002049F9 /* ItemDetailViewController.swift in Sources */,
 				C337285023E4E31000929121 /* SearchPresentAnimationController.swift in Sources */,
+				C391950C23F89CA4002EE864 /* Date+AsString.swift in Sources */,
 				C3529D8723F600C20063E0BE /* QuestionCell.swift in Sources */,
 				C337285223E669BA00929121 /* UIView+PinToSuperview.swift in Sources */,
 				C372EF3423E23A8900101A56 /* SceneDelegate.swift in Sources */,

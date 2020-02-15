@@ -26,13 +26,19 @@ class QuestionsTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         
         let spinner = UIActivityIndicatorView(style: .large)
         spinner.startAnimating()
-        tableView.backgroundView = spinner
+        tableView.backgroundView = spinner        
         
         registerCell(QuestionCell.self)
         
+        fetchQuestions()
+    }
+    
+    private func fetchQuestions() {
         guard let id = id else { return }
         
         MeLiService.fetchQuestions(id: id, completion: { [weak self] (response, error) in
@@ -58,6 +64,10 @@ class QuestionsTableViewController: UITableViewController {
         guard let questionsTVC = storyboard.instantiateViewController(withIdentifier: "QuestionsTableViewController") as? QuestionsTableViewController else { return nil }
         questionsTVC.id = id
         return questionsTVC
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
     }
 
 }

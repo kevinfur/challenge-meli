@@ -17,5 +17,7 @@ struct Colors {
     
     static let blackTone1 = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
     static let blackTone2 = UIColor(red: 68/255, green: 68/255, blue: 68/255, alpha: 1)
+    static let blackTone3 = UIColor(red: 136/255, green: 136/255, blue: 136/255, alpha: 1)
+    static let blackTone4 = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
     
 }

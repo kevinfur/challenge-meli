@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal extension UIView {
+extension UIView {
     
     func pinToSuperview() {
         if let superview = superview {

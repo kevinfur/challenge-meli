@@ -24,20 +24,6 @@ class ItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let id = id else { return }
-        
-        MeLiService.fetchItem(id: id, completion: { [weak self] (response, error) in
-            guard let strongSelf = self else { return }
-            
-            switch (response, error) {
-            case (let .some(response), .none):
-                strongSelf.loadData(from: response)
-            case (.none, let .some(error)):
-                print(error)
-            default: break
-            }
-        })
-        
         picturesScrollView.alwaysBounceHorizontal = true
         picturesScrollView.showsHorizontalScrollIndicator = false
         picturesScrollView.isPagingEnabled = true
@@ -51,6 +37,24 @@ class ItemDetailViewController: UIViewController {
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = Colors.blackTone2
+        
+        fetchItem()
+    }
+    
+    private func fetchItem() {
+        guard let id = id else { return }
+        
+        MeLiService.fetchItem(id: id, completion: { [weak self] (response, error) in
+            guard let strongSelf = self else { return }
+            
+            switch (response, error) {
+            case (let .some(response), .none):
+                strongSelf.loadData(from: response)
+            case (.none, let .some(error)):
+                print(error)
+            default: break
+            }
+        })
     }
     
     @objc func didTapGoToDescription() {

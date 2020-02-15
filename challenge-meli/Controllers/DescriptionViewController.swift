@@ -18,7 +18,12 @@ class DescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchDescription()
+    }
+    
+    private func fetchDescription() {
         guard let id = id else { return }
+        
         MeLiService.fetchDescription(id: id, completion: { [weak self] (response, error) in
             guard let strongSelf = self else { return }
             

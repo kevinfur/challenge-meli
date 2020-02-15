@@ -28,6 +28,8 @@ class ItemsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         
         let spinner = UIActivityIndicatorView(style: .large)
         spinner.startAnimating()
