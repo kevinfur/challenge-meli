@@ -15,13 +15,14 @@ struct MeLiService {
     
     struct Constants {
         static let BaseURL = "https://api.mercadolibre.com"
+        static let pageItemsCount = 35
     }
     
     enum Errors: Error {
         case invalidQuery
     }
     
-    static func searchItems(query: String, completion: @escaping (SearchItemsResponse?, Error?) -> ()) {
+    static func searchItems(query: String, page: Int, completion: @escaping (SearchItemsResponse?, Error?) -> ()) {
         guard let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
             completion(nil, Errors.invalidQuery)
             return
@@ -29,7 +30,9 @@ struct MeLiService {
         
         let url = Constants.BaseURL + "/sites/MLA/search"
         
-        let parameters: Parameters = ["q": encodedQuery]
+        let parameters: Parameters = ["q": encodedQuery,
+                                      "limit": Constants.pageItemsCount,
+                                      "offset": page * Constants.pageItemsCount]
         
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
             

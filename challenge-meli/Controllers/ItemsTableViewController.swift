@@ -10,6 +10,7 @@ import UIKit
 
 protocol ItemsTableViewControllerDelegate: class {
     func itemHasBeenSelected(_ item: SearchItem)
+    func fetchNextPage()
 }
 
 class ItemsTableViewController: UITableViewController {
@@ -29,7 +30,7 @@ class ItemsTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
-        tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
+        tableView.showsVerticalScrollIndicator = false
         
         let spinner = UIActivityIndicatorView(style: .large)
         spinner.startAnimating()
@@ -48,7 +49,7 @@ class ItemsTableViewController: UITableViewController {
 extension ItemsTableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 68
+        return 76
     }
     
     public override func numberOfSections(in tableView: UITableView) -> Int {
@@ -72,6 +73,13 @@ extension ItemsTableViewController {
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.row]
         delegate?.itemHasBeenSelected(item)
+    }
+    
+    override open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let rowIndex = (items.count-10 >= 0) ? items.count-10 : items.count-1
+        if indexPath.row == rowIndex {
+            delegate?.fetchNextPage()
+        }
     }
     
 }

@@ -12,9 +12,13 @@ class SearchViewController: UIViewController {
     
     private var query: String? {
         didSet {
+            pageNumber = 0
             searchItems()
         }
     }
+    
+    private var pageNumber: Int = 0
+    private var maxPageToShow: Int = 5
     
     private weak var itemsTableViewController: ItemsTableViewController?
     let searchController = UISearchController(searchResultsController: nil)
@@ -22,17 +26,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchController.obscuresBackgroundDuringPresentation = true
-        searchController.searchBar.placeholder = "Buscar productos, marcas y más..."
-        searchController.searchBar.searchTextField.backgroundColor = UIColor.white
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.delegate = self
-        self.definesPresentationContext = true
-        
-        navigationItem.titleView = searchController.searchBar
-        
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = Colors.yellow
+        configureSearchController()
         
         navigationItem.hidesBackButton = true
         navigationItem.leftBarButtonItem = nil
@@ -41,17 +35,38 @@ class SearchViewController: UIViewController {
         navigationItem.backBarButtonItem?.tintColor = Colors.blackTone2
     }
     
+    func configureSearchController() {
+        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.searchBar.placeholder = "Buscar productos, marcas y más..."
+        searchController.searchBar.searchTextField.backgroundColor = UIColor.white
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.showsCancelButton = false
+        
+        navigationItem.titleView = searchController.searchBar
+        
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = Colors.yellow
+        
+        self.definesPresentationContext = true
+    }
+    
     private func searchItems() {
         guard let query = query else { return }
         
-        itemsTableViewController?.items = []
+        if pageNumber == 0 {
+            itemsTableViewController?.items = []
+        }
+        
         searchController.searchBar.text = query
-        MeLiService.searchItems(query: query, completion: { [weak self] (response, error) in
+        MeLiService.searchItems(query: query, page: pageNumber, completion: { [weak self] (response, error) in
             guard let strongSelf = self else { return }
             
             switch (response, error) {
             case (let .some(response), .none):
-                strongSelf.itemsTableViewController?.items = response.results
+                if let currentItems = strongSelf.itemsTableViewController?.items {
+                    strongSelf.itemsTableViewController?.items = currentItems + response.results
+                }
             case (.none, let .some(error)):
                 print(error)
             default: break
@@ -87,6 +102,13 @@ extension SearchViewController: ItemsTableViewControllerDelegate {
         }
     }
     
+    func fetchNextPage() {
+        pageNumber = pageNumber + 1
+        if pageNumber < maxPageToShow {
+            searchItems()
+        }
+    }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -96,6 +118,10 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         searchController.isActive = false
         query = searchBarText
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.text = query
     }
     
 }

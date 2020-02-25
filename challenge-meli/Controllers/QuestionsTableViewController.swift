@@ -47,6 +47,7 @@ class QuestionsTableViewController: UITableViewController {
             switch (response, error) {
             case (let .some(response), .none):
                 strongSelf.items = response.questions
+                strongSelf.tableView.backgroundView = UIView()
             case (.none, let .some(error)):
                 print(error)
             default: break
