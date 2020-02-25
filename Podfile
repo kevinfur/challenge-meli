@@ -8,7 +8,8 @@ target 'challenge-meli' do
 
   target 'challenge-meliTests' do
     inherit! :search_paths
-    # Pods for testing
+    
+    pod 'OHHTTPStubs/Swift', '~> 9.0'
   end
 
   target 'challenge-meliUITests' do

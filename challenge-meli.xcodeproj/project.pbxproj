@@ -36,10 +36,13 @@
 		C372EF6C23E249CF00101A56 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372EF6B23E249CF00101A56 /* Colors.swift */; };
 		C391950823F65357002EE864 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391950723F65357002EE864 /* Answer.swift */; };
 		C391950C23F89CA4002EE864 /* Date+AsString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391950B23F89CA4002EE864 /* Date+AsString.swift */; };
+		C391950E23F9B728002EE864 /* descriptionMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C391950D23F9B728002EE864 /* descriptionMock.json */; };
+		C391951023F9C0EC002EE864 /* questionsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C391950F23F9C0EB002EE864 /* questionsMock.json */; };
 		C3B9841223EBABFB00126126 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841023EBAB5200126126 /* ItemCell.swift */; };
 		C3B9841323EBAC1000126126 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C337284523E4C59500929121 /* ItemCell.xib */; };
 		C3B9841523EBB71300126126 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841423EBB71300126126 /* SearchItem.swift */; };
 		C3B9841723EBB7D800126126 /* Double+Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841623EBB7D800126126 /* Double+Price.swift */; };
+		C3E42F1F23FB46F40038A104 /* itemDetailMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C3E42F1E23FB46F40038A104 /* itemDetailMock.json */; };
 		C3F9446C23F0D881002049F9 /* ItemDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F9446B23F0D881002049F9 /* ItemDetailResponse.swift */; };
 		C3F9446E23F0DDAF002049F9 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F9446D23F0DDAF002049F9 /* ItemDetailViewController.swift */; };
 		C3F9447023F31108002049F9 /* UIStackView+RemoveAllSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F9446F23F31108002049F9 /* UIStackView+RemoveAllSubviews.swift */; };
@@ -106,9 +109,12 @@
 		C372EF6B23E249CF00101A56 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C391950723F65357002EE864 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		C391950B23F89CA4002EE864 /* Date+AsString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+AsString.swift"; sourceTree = "<group>"; };
+		C391950D23F9B728002EE864 /* descriptionMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = descriptionMock.json; sourceTree = "<group>"; };
+		C391950F23F9C0EB002EE864 /* questionsMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionsMock.json; sourceTree = "<group>"; };
 		C3B9841023EBAB5200126126 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		C3B9841423EBB71300126126 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		C3B9841623EBB7D800126126 /* Double+Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Price.swift"; sourceTree = "<group>"; };
+		C3E42F1E23FB46F40038A104 /* itemDetailMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = itemDetailMock.json; sourceTree = "<group>"; };
 		C3F9446B23F0D881002049F9 /* ItemDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailResponse.swift; sourceTree = "<group>"; };
 		C3F9446D23F0DDAF002049F9 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		C3F9446F23F31108002049F9 /* UIStackView+RemoveAllSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAllSubviews.swift"; sourceTree = "<group>"; };
@@ -242,6 +248,9 @@
 			isa = PBXGroup;
 			children = (
 				C372EF4823E23A8A00101A56 /* challenge_meliTests.swift */,
+				C391950F23F9C0EB002EE864 /* questionsMock.json */,
+				C391950D23F9B728002EE864 /* descriptionMock.json */,
+				C3E42F1E23FB46F40038A104 /* itemDetailMock.json */,
 				C372EF4A23E23A8A00101A56 /* Info.plist */,
 			);
 			path = "challenge-meliTests";
@@ -340,6 +349,7 @@
 				C372EF4023E23A8A00101A56 /* Sources */,
 				C372EF4123E23A8A00101A56 /* Frameworks */,
 				C372EF4223E23A8A00101A56 /* Resources */,
+				67D4A5EAD222B2CDEE5C56A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -430,6 +440,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C391950E23F9B728002EE864 /* descriptionMock.json in Resources */,
+				C391951023F9C0EC002EE864 /* questionsMock.json in Resources */,
+				C3E42F1F23FB46F40038A104 /* itemDetailMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +476,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67D4A5EAD222B2CDEE5C56A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-challenge-meliTests/Pods-challenge-meliTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-challenge-meliTests/Pods-challenge-meliTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DCC8BD9CC3647E66CBF40866 /* [CP] Check Pods Manifest.lock */ = {

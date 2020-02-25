@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DF65574D712E92EAB1D637B4352E62E"
+               BlueprintIdentifier = "E201211842FB43E565CAAE40F7931B32"
                BuildableName = "Pods_challenge_meliTests.framework"
                BlueprintName = "Pods-challenge-meliTests"
                ReferencedContainer = "container:Pods.xcodeproj">
