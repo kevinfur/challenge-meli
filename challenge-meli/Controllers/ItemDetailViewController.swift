@@ -12,14 +12,13 @@ import UIKit
 class ItemDetailViewController: UIViewController {
 
     var id: String?
-  
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var picturesStackView: UIStackView!
     @IBOutlet weak var picturesScrollView: UIScrollView!
     
-    @IBOutlet weak var descriptionView: UIView!
-    @IBOutlet weak var questionsView: UIView!
+    @IBOutlet weak var actionsStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +31,10 @@ class ItemDetailViewController: UIViewController {
         titleLabel.text = ""
         priceLabel.text = ""
         
-        descriptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapGoToDescription)))
-        descriptionView.isUserInteractionEnabled = true
-        
-        questionsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapGoToQuestions)))
-        questionsView.isUserInteractionEnabled = true
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = Colors.blackTone2
+        
+        addActions()
         
         fetchItem()
     }
@@ -60,14 +55,20 @@ class ItemDetailViewController: UIViewController {
         })
     }
     
-    @objc func didTapGoToDescription() {
-        guard let id = id, let descriptionVC = DescriptionViewController.make(id: id) else { return }        
-        navigationController?.pushViewController(descriptionVC, animated: true)
-    }
-    
-    @objc func didTapGoToQuestions() {
-        guard let id = id, let questionsVC = QuestionsTableViewController.make(id: id) else { return }
-        navigationController?.pushViewController(questionsVC, animated: true)
+    private func addActions() {
+        let descriptionActionView = ItemDetailActionView.loadFromNib()
+        descriptionActionView.viewData = ItemDetailActionView.ViewData(title: "Descripción", action: { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.performSegue(withIdentifier: "fromDetailToDescriptionSegue", sender: nil)
+        })
+        actionsStack.addArrangedSubview(descriptionActionView)
+        
+        let questionsActionView = ItemDetailActionView.loadFromNib()
+        questionsActionView.viewData = ItemDetailActionView.ViewData(title: "Preguntas", action: { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.performSegue(withIdentifier: "fromDetailToQuestionsSegue", sender: nil)
+        })
+        actionsStack.addArrangedSubview(questionsActionView)
     }
     
     private func loadData(from item: ItemDetailResponse) {
@@ -86,6 +87,18 @@ class ItemDetailViewController: UIViewController {
             
             picturesStackView.addArrangedSubview(imageView)
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let id = self.id else { return }
+        
+        if segue.identifier == "fromDetailToDescriptionSegue", let descriptionVC = segue.destination as? DescriptionViewController {
+            descriptionVC.id = id
+        }
+        
+        if segue.identifier == "fromDetailToQuestionsSegue", let questionsVC = segue.destination as? QuestionsTableViewController {
+            questionsVC.id = id
+        }
     }
     
     public static func make(id: String) -> ItemDetailViewController? {

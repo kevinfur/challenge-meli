@@ -40,13 +40,6 @@ class DescriptionViewController: UIViewController {
     private func loadData(from response: DescriptionResponse) {
         descriptionLabel.text = response.plainText
     }
-    
-    public static func make(id: String) -> DescriptionViewController? {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle(for: self))
-        guard let descriptionVC = storyboard.instantiateViewController(withIdentifier: "DescriptionViewController") as? DescriptionViewController else { return nil }
-        descriptionVC.id = id
-        return descriptionVC
-    }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent

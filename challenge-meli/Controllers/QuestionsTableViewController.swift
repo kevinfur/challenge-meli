@@ -60,13 +60,6 @@ class QuestionsTableViewController: UITableViewController {
         tableView.register(nibCell, forCellReuseIdentifier: "\(cellType.self)")
     }
     
-    public static func make(id: String) -> QuestionsTableViewController? {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle(for: self))
-        guard let questionsTVC = storyboard.instantiateViewController(withIdentifier: "QuestionsTableViewController") as? QuestionsTableViewController else { return nil }
-        questionsTVC.id = id
-        return questionsTVC
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
     }
