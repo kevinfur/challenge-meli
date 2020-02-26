@@ -28,6 +28,30 @@ class challenge_meliTests: XCTestCase {
         HTTPStubs.removeAllStubs()
     }
     
+    func testSearchService() {
+        let exp = expectation(description: "Testing search service")
+        
+        stub(condition: isHost(Constants.host)) { _ in
+            let stubPath = OHPathForFile(MockFileNames.search.rawValue, type(of: self))
+            return fixture(filePath: stubPath!, headers: ["Content-Type": Constants.contentType])
+        }
+        
+        var mockedResponse: SearchItemsResponse? = nil
+        MeLiService.searchItems(query: "TEST", page: 0, completion: { (response, error) in
+            mockedResponse = response
+            exp.fulfill()
+        })
+        
+        waitForExpectations(timeout: 3)
+        
+        XCTAssertNotNil(mockedResponse)
+        XCTAssertEqual(mockedResponse?.results.count, 5, "Results count doesn't match.")
+        XCTAssertEqual(mockedResponse?.results[0].id, "MLA835735664", "Item id doesn't match.")
+        XCTAssertEqual(mockedResponse?.results[0].price, 26989.99, "Item price doesn't match.")
+        XCTAssertEqual(mockedResponse?.results[0].thumbnail, URL(string: "http://mla-s1-p.mlstatic.com/702504-MLA31932877793_082019-I.jpg"), "Item thumbnail doesn't match.")
+        XCTAssertEqual(mockedResponse?.results[0].title, "Motorola X4 32 Gb Negro 3 Gb Ram", "Item title doesn't match.")
+    }
+    
     func testItemDetailService() {
         let exp = expectation(description: "Testing item detail service")
         

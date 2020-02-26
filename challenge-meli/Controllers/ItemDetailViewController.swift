@@ -29,6 +29,9 @@ class ItemDetailViewController: UIViewController {
         picturesScrollView.isPagingEnabled = true
         picturesScrollView.backgroundColor = UIColor.white
         
+        titleLabel.text = ""
+        priceLabel.text = ""
+        
         descriptionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapGoToDescription)))
         descriptionView.isUserInteractionEnabled = true
         

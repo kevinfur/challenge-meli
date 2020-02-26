@@ -38,6 +38,7 @@
 		C391950C23F89CA4002EE864 /* Date+AsString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391950B23F89CA4002EE864 /* Date+AsString.swift */; };
 		C391950E23F9B728002EE864 /* descriptionMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C391950D23F9B728002EE864 /* descriptionMock.json */; };
 		C391951023F9C0EC002EE864 /* questionsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C391950F23F9C0EB002EE864 /* questionsMock.json */; };
+		C3A539EF2405F5E100DD97C1 /* searchMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C3A539EE2405F5E000DD97C1 /* searchMock.json */; };
 		C3B9841223EBABFB00126126 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841023EBAB5200126126 /* ItemCell.swift */; };
 		C3B9841323EBAC1000126126 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C337284523E4C59500929121 /* ItemCell.xib */; };
 		C3B9841523EBB71300126126 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B9841423EBB71300126126 /* SearchItem.swift */; };
@@ -111,6 +112,7 @@
 		C391950B23F89CA4002EE864 /* Date+AsString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+AsString.swift"; sourceTree = "<group>"; };
 		C391950D23F9B728002EE864 /* descriptionMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = descriptionMock.json; sourceTree = "<group>"; };
 		C391950F23F9C0EB002EE864 /* questionsMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionsMock.json; sourceTree = "<group>"; };
+		C3A539EE2405F5E000DD97C1 /* searchMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchMock.json; sourceTree = "<group>"; };
 		C3B9841023EBAB5200126126 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		C3B9841423EBB71300126126 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		C3B9841623EBB7D800126126 /* Double+Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Price.swift"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				C372EF4823E23A8A00101A56 /* challenge_meliTests.swift */,
+				C3A539EE2405F5E000DD97C1 /* searchMock.json */,
 				C391950F23F9C0EB002EE864 /* questionsMock.json */,
 				C391950D23F9B728002EE864 /* descriptionMock.json */,
 				C3E42F1E23FB46F40038A104 /* itemDetailMock.json */,
@@ -443,6 +446,7 @@
 				C391950E23F9B728002EE864 /* descriptionMock.json in Resources */,
 				C391951023F9C0EC002EE864 /* questionsMock.json in Resources */,
 				C3E42F1F23FB46F40038A104 /* itemDetailMock.json in Resources */,
+				C3A539EF2405F5E100DD97C1 /* searchMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
