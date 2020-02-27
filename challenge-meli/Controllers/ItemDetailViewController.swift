@@ -100,13 +100,6 @@ class ItemDetailViewController: UIViewController {
             questionsVC.id = id
         }
     }
-    
-    public static func make(id: String) -> ItemDetailViewController? {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle(for: self))
-        guard let itemDetailVC = storyboard.instantiateViewController(withIdentifier: "ItemDetailViewController") as? ItemDetailViewController else { return nil }
-        itemDetailVC.id = id
-        return itemDetailVC
-    }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent

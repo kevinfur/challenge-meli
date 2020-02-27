@@ -16,6 +16,7 @@ struct MeLiService {
     struct Constants {
         static let BaseURL = "https://api.mercadolibre.com"
         static let pageItemsCount = 40
+        static let dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
     }
     
     enum Errors: Error {
@@ -120,7 +121,7 @@ struct MeLiService {
             case .success(_):
                 let decoder = JSONDecoder()
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+                dateFormatter.dateFormat = Constants.dateFormat
                 decoder.dateDecodingStrategy = .formatted(dateFormatter)
                 do {
                     if let data = response.data {
