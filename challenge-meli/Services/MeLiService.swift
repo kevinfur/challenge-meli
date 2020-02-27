@@ -15,11 +15,12 @@ struct MeLiService {
     
     struct Constants {
         static let BaseURL = "https://api.mercadolibre.com"
-        static let pageItemsCount = 35
+        static let pageItemsCount = 40
     }
     
     enum Errors: Error {
         case invalidQuery
+        case parseError
     }
     
     static func searchItems(query: String, page: Int, completion: @escaping (SearchItemsResponse?, Error?) -> ()) {
@@ -46,7 +47,7 @@ struct MeLiService {
                     }
                 } catch let error {
                     print(error)
-                    completion(nil, error)
+                    completion(nil, Errors.parseError)
                 }
             case .failure(let error):
                 print(error)
@@ -73,7 +74,7 @@ struct MeLiService {
                     }
                 } catch let error {
                     print(error)
-                    completion(nil, error)
+                    completion(nil, Errors.parseError)
                 }
             case .failure(let error):
                 print(error)
@@ -98,7 +99,7 @@ struct MeLiService {
                     }
                 } catch let error {
                     print(error)
-                    completion(nil, error)
+                    completion(nil, Errors.parseError)
                 }
             case .failure(let error):
                 print(error)
@@ -128,7 +129,7 @@ struct MeLiService {
                     }
                 } catch let error {
                     print(error)
-                    completion(nil, error)
+                    completion(nil, Errors.parseError)
                 }
             case .failure(let error):
                 print(error)
