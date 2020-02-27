@@ -79,6 +79,10 @@ class SearchViewController: UIViewController {
             itemsTableViewController = itemsTVC
             itemsTableViewController?.delegate = self
         }
+        
+        if segue.identifier == "fromSearchToDetailSegue", let itemDetailVC = segue.destination as? ItemDetailViewController, let item = sender as? SearchItem {
+            itemDetailVC.id = item.id
+        }
     }
     
     public static func make(query: String) -> SearchViewController? {
@@ -97,9 +101,7 @@ class SearchViewController: UIViewController {
 extension SearchViewController: ItemsTableViewControllerDelegate {
     
     func itemHasBeenSelected(_ item: SearchItem) {
-        if let itemDetailVC = ItemDetailViewController.make(id: item.id) {
-            navigationController?.pushViewController(itemDetailVC, animated: true)
-        }
+        performSegue(withIdentifier: "fromSearchToDetailSegue", sender: item)
     }
     
     func fetchNextPage() {

@@ -75,6 +75,9 @@
                         <viewLayoutGuide key="safeArea" id="vhQ-LM-C62"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wbv-hk-KtS"/>
+                    <connections>
+                        <segue destination="hXw-Om-yFR" kind="show" identifier="fromSearchToDetailSegue" id="zhd-8l-nUH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qe9-zJ-Fnq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,14 +88,14 @@
             <objects>
                 <viewController storyboardIdentifier="ItemDetailViewController" id="hXw-Om-yFR" customClass="ItemDetailViewController" customModule="challenge_meli" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Qy-Qx-WQp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV6-UQ-gSR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Fsx-EW-eWY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9q-up-cUt">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="42.5"/>
@@ -158,7 +161,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Io2-qA-uiO">
-                                                <rect key="frame" x="0.0" y="419.5" width="414" height="476.5"/>
+                                                <rect key="frame" x="0.0" y="419.5" width="414" height="422.5"/>
                                             </stackView>
                                         </subviews>
                                     </stackView>
@@ -184,6 +187,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6fg-hN-vFo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wty-iD-v5I"/>
                     <connections>
                         <outlet property="actionsStack" destination="Io2-qA-uiO" id="JpB-6J-2i3"/>
                         <outlet property="picturesScrollView" destination="ASh-gc-f8x" id="a5Y-kO-cF1"/>
