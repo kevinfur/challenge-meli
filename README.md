@@ -11,7 +11,7 @@ Se utilizó CocoaPods como manager de dependencias para importar los siguientes 
 - OHHTTPStubs -> Para mockear respuestas en los tests.
 
 # Arquitectura
-Se usó MVC como arquitectura ya que es un proyecto chico y hecho de forma rápida. En proyectos más grandes sería mejor evaluar el uso de otras arquitecturas para dividir código y mejorar su testeabilidad.
+Se usó MVC como arquitectura ya que es un proyecto chico y hecho de forma rápida. En proyectos más grandes sería bueno evaluar el uso de otras arquitecturas para dividir código y mejorar su testeabilidad.
 
 # Pantallas
 <div>
